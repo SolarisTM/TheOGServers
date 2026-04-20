@@ -17,9 +17,10 @@
             min-height: 100vh;
         }
 
+        /* Janela Geral ajustada para ter mais espaço nas bordas laterais pro fundo */
         .main-window {
-            width: 1450px; 
-            max-width: 98%;
+            width: 1380px; 
+            max-width: 95%; /* Garante respiro lateral */
             margin-top: 5px;
         }
 
@@ -35,7 +36,7 @@
             width: 100%;
         }
 
-        /* Menu de Navegação Atualizado com Ícones */
+        /* Menu de Navegação com Ícones */
         .action-buttons {
             display: flex;
             gap: 12px;
@@ -51,12 +52,11 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px; /* Espaço entre ícone e texto */
+            gap: 8px;
             font-weight: bold;
             font-size: 12px;
         }
 
-        /* Estilização dos ícones dentro dos botões */
         .action-buttons button img {
             width: 18px;
             height: 18px;
@@ -85,11 +85,11 @@
             line-height: 1.6;
         }
 
-        /* Game Grid */
+        /* Game Grid - Distância entre banners mantida intacta */
         .game-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 25px;
+            gap: 25px; /* Mantido conforme solicitado */
             padding: 30px;
             background: #191919;
             max-height: 600px;
@@ -101,7 +101,7 @@
         .game-grid::-webkit-scrollbar-track { background: #191919; }
         .game-grid::-webkit-scrollbar-thumb { background: #333; border: 2px solid #191919; }
 
-        /* Game Card */
+        /* Game Card - Estilo mantido */
         .game-card {
             border: 1px solid #444;
             overflow: hidden;
@@ -144,7 +144,7 @@
             border-top: 1px solid #333;
         }
 
-        /* Rodapé de Direitos Autorais */
+        /* Rodapé */
         .site-footer {
             padding: 15px;
             text-align: center;
@@ -154,7 +154,7 @@
             border-top: 1px solid #252525;
         }
 
-        /* Taskbar Windows XP */
+        /* Taskbar */
         .taskbar {
             position: fixed; bottom: 0; left: 0; right: 0;
             height: 30px;
