@@ -21,43 +21,56 @@
             width: 1100px; 
             max-width: 98%;
             margin-top: 20px;
-            background: #ece9d8; /* Frame color */
         }
 
-        /* Container central com a cor #191919 */
-        .window-content-area {
+        /* Remove o padding padrão da window-body para eliminar espaços brancos */
+        .window-body {
+            margin: 0 !important;
+            padding: 0 !important;
             background-color: #191919 !important;
+        }
+
+        .window-content-area {
+            background-color: #191919;
             color: #ffffff;
         }
 
-        /* Centralized Action Buttons */
+        /* Menu de Navegação */
         .action-buttons {
             display: flex;
             gap: 8px;
-            padding: 12px;
-            background: #191919; /* Matched to requested hex */
-            border-bottom: 1px solid #333;
+            padding: 15px;
+            background: #191919;
+            border-bottom: 1px solid #333; /* Divisória sutil */
             justify-content: center;
         }
 
-        .action-buttons button {
-            min-width: 100px;
-        }
-
-        /* 4-Column Grid with Dark Background */
+        /* Grid de Jogos sem espaços brancos */
         .game-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 15px;
             padding: 20px;
-            background: #191919; /* Matched to requested hex */
+            background: #191919;
             max-height: 600px;
             overflow-y: auto;
         }
 
+        /* Custom Scrollbar para manter o tema escuro */
+        .game-grid::-webkit-scrollbar {
+            width: 12px;
+        }
+        .game-grid::-webkit-scrollbar-track {
+            background: #191919;
+        }
+        .game-grid::-webkit-scrollbar-thumb {
+            background: #333;
+            border: 2px solid #191919;
+        }
+
         .game-card {
             position: relative;
-            border: 1px solid #444; /* Subtle border for visibility on dark */
+            border: 1px solid #444;
             overflow: hidden;
             cursor: pointer;
             height: 150px;
@@ -83,17 +96,25 @@
             color: white;
             font-weight: bold;
             text-align: center;
-            font-size: 13px;
+            font-size: 12px;
             text-shadow: 2px 2px 4px rgba(0,0,0,1);
             background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
         }
 
-        /* Status Bar adjustment for dark mode */
+        /* Barra de Status adaptada para o modo escuro */
         .status-bar {
-            background: #ece9d8; /* Keeps the classic bottom bar look */
-            color: #000;
+            background: #191919 !important;
+            border-top: 1px solid #333 !important;
+            color: #aaa !important;
+            box-shadow: none !important;
         }
 
+        .status-bar-field {
+            border-right: 1px solid #333 !important;
+            box-shadow: none !important;
+        }
+
+        /* Taskbar do Windows */
         .taskbar {
             position: fixed; bottom: 0; left: 0; right: 0;
             height: 30px;
@@ -123,7 +144,7 @@
                 <button aria-label="Close"></button>
             </div>
         </div>
-        <div class="window-body" style="padding: 0;">
+        <div class="window-body">
             
             <div class="window-content-area">
                 <div class="action-buttons">
@@ -136,36 +157,36 @@
 
                 <div class="game-grid">
                     <div class="game-card hl-sound">
+                        <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/24860/header.jpg">
+                        <div class="game-title">Battlefield 2</div>
+                    </div>
+                    <div class="game-card hl-sound">
                         <img src="https://image.api.playstation.com/vulcan/ap/rnd/202306/2015/a12361d763784a9e525143a5023a633d.png">
                         <div class="game-title">Call of Duty 4</div>
+                    </div>
+                    <div class="game-card hl-sound">
+                        <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4000/header.jpg">
+                        <div class="game-title">Garry's Mod</div>
+                    </div>
+                    <div class="game-card hl-sound">
+                        <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/320/header.jpg">
+                        <div class="game-title">Half-Life 2: DM</div>
+                    </div>
+                    <div class="game-card hl-sound">
+                        <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1250/header.jpg">
+                        <div class="game-title">Killing Floor</div>
                     </div>
                     <div class="game-card hl-sound">
                         <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2820/header.jpg">
                         <div class="game-title">Quake III Arena</div>
                     </div>
                     <div class="game-card hl-sound">
-                        <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/24860/header.jpg">
-                        <div class="game-title">Battlefield 2</div>
-                    </div>
-                    <div class="game-card hl-sound">
                         <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/41070/header.jpg">
-                        <div class="game-title">Serious Sam Classic</div>
+                        <div class="game-title">Serious Sam: TFE</div>
                     </div>
                     <div class="game-card hl-sound">
-                        <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/13140/header.jpg">
-                        <div class="game-title">Medal of Honor</div>
-                    </div>
-                    <div class="game-card hl-sound">
-                        <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/9010/header.jpg">
-                        <div class="game-title">Unreal Tournament</div>
-                    </div>
-                    <div class="game-card hl-sound">
-                        <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/22300/header.jpg">
-                        <div class="game-title">Fallout 3</div>
-                    </div>
-                    <div class="game-card hl-sound">
-                        <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/6520/header.jpg">
-                        <div class="game-title">Garry's Mod</div>
+                        <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/41074/header.jpg">
+                        <div class="game-title">Serious Sam: TSE</div>
                     </div>
                 </div>
             </div>
@@ -173,7 +194,7 @@
             <div class="status-bar">
                 <p class="status-bar-field">Browsing: Games</p>
                 <p class="status-bar-field">Status: System Online</p>
-                <p class="status-bar-field">v1.4</p>
+                <p class="status-bar-field">v1.5</p>
             </div>
         </div>
     </div>
@@ -186,14 +207,12 @@
 
     <script>
         const hlClick = new Audio('https://www.soundboard.com/handler/DownLoadTrack.ashx?cliptitle=Half-Life+Select+Sound&filename=mt/MTY4NTI2NDMxNjg1Mjcy_p_2fGz_2biW9_2fM.mp3');
-
         document.querySelectorAll('.hl-sound').forEach(el => {
             el.addEventListener('mouseenter', () => {
                 hlClick.currentTime = 0;
                 hlClick.play().catch(() => {}); 
             });
         });
-
         setInterval(() => {
             const now = new Date();
             document.getElementById('clock').innerText = now.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
