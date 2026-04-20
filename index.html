@@ -35,7 +35,7 @@
             width: 100%;
         }
 
-        /* Menu de Navegação */
+        /* Navigation Menu */
         .action-buttons {
             display: flex;
             gap: 10px;
@@ -49,7 +49,7 @@
             height: 28px;
         }
 
-        /* Seção de Boas-Vindas (Estilo OldServers) */
+        /* Welcome Section */
         .welcome-section {
             text-align: center;
             padding: 20px;
@@ -72,7 +72,7 @@
             line-height: 1.5;
         }
 
-        /* Grid de Jogos */
+        /* Game Grid */
         .game-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -88,13 +88,16 @@
         .game-grid::-webkit-scrollbar-track { background: #191919; }
         .game-grid::-webkit-scrollbar-thumb { background: #333; border: 2px solid #191919; }
 
+        /* Updated Game Card Style to match reference image */
         .game-card {
-            position: relative;
             border: 1px solid #444;
             overflow: hidden;
             cursor: pointer;
-            height: 180px;
+            height: 190px; /* Adjusted height for new layout */
             transition: transform 0.1s, border-color 0.2s;
+            display: flex;
+            flex-direction: column; /* Stack image and title vertically */
+            background: #000; /* Fallback background */
         }
 
         .game-card:hover {
@@ -104,21 +107,22 @@
 
         .game-card img {
             width: 100%;
-            height: 100%;
+            height: 150px; /* Set specific height for the image area */
             object-fit: cover;
-            filter: brightness(0.8);
+            /* Remove brightness filter so image is clear */
         }
 
+        /* Updated Game Title to be a solid black bar at the bottom */
         .game-title {
-            position: absolute;
-            bottom: 0; left: 0; right: 0;
-            padding: 12px;
-            color: white;
+            width: 100%;
+            padding: 8px 0;
+            color: white; /* Clean white text */
             font-weight: bold;
             text-align: center;
             font-size: 13px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,1);
-            background: linear-gradient(to top, rgba(0,0,0,0.95), transparent);
+            background: #000000; /* Solid black background bar */
+            text-shadow: none; /* Clean look, no shadow */
+            border-top: 1px solid #333; /* Subtle separation from image */
         }
 
         .status-bar {
