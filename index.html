@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="https://unpkg.com/xp.css">
     <style>
         body {
+            /* ATUALIZADO: Link direto para o wallpaper Bliss original */
             background: #0078D7 url('https://upload.wikimedia.org/wikipedia/commons/7/7d/Bliss_%28Windows_XP%29.png') no-repeat center center fixed;
-            background-size: cover;
+            background-size: cover; /* Garante que cubra a tela toda */
             margin: 0; padding: 20px;
             font-family: "Tahoma", sans-serif;
             display: flex;
@@ -17,7 +18,6 @@
             min-height: 100vh;
         }
 
-        /* Janela Geral alargada para suportar o novo grid horizontal */
         .main-window {
             width: 1600px; 
             max-width: 98%;
@@ -36,7 +36,7 @@
             width: 100%;
         }
 
-        /* Menu de Navegação */
+        /* Menu de Navegação com Ícones */
         .action-buttons {
             display: flex;
             gap: 12px;
@@ -78,7 +78,7 @@
             text-transform: uppercase;
         }
 
-        /* Game Grid - Com o respiro lateral de 60px */
+        /* Game Grid - Estilo Steam Grid Horizontal */
         .game-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -94,12 +94,11 @@
         .game-grid::-webkit-scrollbar-track { background: #191919; }
         .game-grid::-webkit-scrollbar-thumb { background: #333; border: 2px solid #191919; }
 
-        /* Game Card - Ajustado para estilo Steam Grid Horizontal */
         .game-card {
             border: 1px solid #444;
             overflow: hidden;
             cursor: pointer;
-            height: 200px; /* Reduzi a altura para ficar mais horizontal */
+            height: 200px;
             transition: transform 0.1s, border-color 0.2s, box-shadow 0.2s;
             display: flex;
             flex-direction: column;
@@ -119,7 +118,7 @@
 
         .game-card img {
             width: 100%;
-            height: 160px; /* Proporção de banner horizontal */
+            height: 160px;
             object-fit: cover;
         }
 
@@ -147,7 +146,7 @@
             border-top: 1px solid #252525;
         }
 
-        /* Taskbar */
+        /* Taskbar Windows XP */
         .taskbar {
             position: fixed; bottom: 0; left: 0; right: 0;
             height: 30px;
