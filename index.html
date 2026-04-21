@@ -10,6 +10,7 @@
 
     <link rel="stylesheet" href="https://unpkg.com/xp.css">
     <style>
+        /* --- ESTILO DESKTOP (MANTIDO INTACTO) --- */
         body {
             background: #0078D7 url('https://raw.githubusercontent.com/SolarisTM/TheOGServers/refs/heads/main/images/bliss-windows-xp.jpg') no-repeat center center fixed;
             background-size: cover;
@@ -171,6 +172,70 @@
             cursor: pointer;
             box-shadow: inset 1px 1px 1px #fff;
         }
+
+        /* --- ADAPTAÇÕES PARA MOBILE (ADICIONADO) --- */
+        @media (max-width: 768px) {
+            body {
+                padding: 5px;
+                padding-bottom: 40px;
+            }
+
+            .main-window {
+                margin-top: 0;
+            }
+
+            .action-buttons {
+                flex-wrap: wrap;
+                gap: 8px;
+                padding: 15px 10px;
+            }
+
+            .action-buttons button {
+                min-width: calc(50% - 10px);
+                flex-grow: 1;
+            }
+
+            .welcome-section {
+                padding: 15px;
+                margin: 10px;
+            }
+
+            .welcome-gif {
+                max-width: 90%;
+            }
+
+            .game-grid {
+                grid-template-columns: repeat(2, 1fr);
+                padding: 15px;
+                gap: 15px;
+                max-height: none; /* Scroll natural no mobile */
+            }
+
+            .game-card {
+                height: 160px;
+            }
+
+            .game-card img {
+                height: 120px;
+            }
+
+            .game-title {
+                font-size: 12px;
+            }
+
+            .taskbar {
+                height: 35px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .game-grid {
+                grid-template-columns: 1fr;
+            }
+            .action-buttons button {
+                min-width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -265,30 +330,25 @@
     </footer>
 
     <script>
-        // Configuração dos Áudios
         const clickSound = new Audio('https://raw.githubusercontent.com/SolarisTM/TheOGServers/refs/heads/main/sounds/windows-xp/Windows%20Navigation%20Start.mp3');
         const hoverSound = new Audio('https://raw.githubusercontent.com/SolarisTM/TheOGServers/refs/heads/main/sounds/windows-xp/Windows%20XP%20Ding.mp3');
 
-        // Seleciona todos os elementos interativos
         const interactiveElements = document.querySelectorAll('.nav-element, button, .game-card');
 
         interactiveElements.forEach(el => {
-            // Som ao passar o mouse
             el.addEventListener('mouseenter', () => {
                 hoverSound.currentTime = 0;
-                hoverSound.play().catch(e => console.log("Interação do usuário necessária para áudio"));
+                hoverSound.play().catch(e => console.log("Interação necessária"));
             });
 
-            // Som ao clicar com botão esquerdo
             el.addEventListener('mousedown', (e) => {
-                if (e.button === 0) { // 0 é o botão esquerdo
+                if (e.button === 0) {
                     clickSound.currentTime = 0;
-                    clickSound.play().catch(e => console.log("Erro ao tocar som de clique"));
+                    clickSound.play().catch(e => console.log("Erro no som"));
                 }
             });
         });
 
-        // Atualização do Relógio
         setInterval(() => {
             const now = new Date();
             document.getElementById('clock').innerText = now.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
