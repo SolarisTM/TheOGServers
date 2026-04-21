@@ -27,7 +27,6 @@
             margin-top: 5px;
         }
 
-        /* Ícone na Barra de Título */
         .title-bar-text::before {
             content: "";
             display: inline-block;
@@ -77,7 +76,6 @@
             height: 24px;
         }
 
-        /* Welcome Section */
         .welcome-section {
             text-align: center;
             padding: 25px;
@@ -190,23 +188,23 @@
             
             <div class="window-content-area">
                 <div class="action-buttons">
-                    <button class="hl-sound">
+                    <button class="nav-element">
                         <img src="https://raw.githubusercontent.com/SolarisTM/TheOGServers/refs/heads/main/images/icons/IE%20Home.png" alt="Home">
                         Home
                     </button>
-                    <button class="hl-sound">
+                    <button class="nav-element">
                         <img src="https://raw.githubusercontent.com/SolarisTM/TheOGServers/refs/heads/main/images/icons/Game%20Controller.png" alt="Games">
                         Games
                     </button>
-                    <button class="hl-sound">
+                    <button class="nav-element">
                         <img src="https://raw.githubusercontent.com/SolarisTM/TheOGServers/refs/heads/main/images/icons/Manage%20Your%20Server.png" alt="Servers">
                         Servers
                     </button>
-                    <button class="hl-sound">
+                    <button class="nav-element">
                         <img src="https://raw.githubusercontent.com/SolarisTM/TheOGServers/refs/heads/main/images/icons/Network%20Connections.png" alt="Status">
                         Status
                     </button>
-                    <button class="hl-sound" style="background: #ffbd69; font-weight: bold; color: #000;">
+                    <button class="nav-element" style="background: #ffbd69; font-weight: bold; color: #000;">
                         <img src="https://raw.githubusercontent.com/SolarisTM/TheOGServers/refs/heads/main/images/icons/Windows%20Messenger.png" alt="Community">
                         Community
                     </button>
@@ -219,35 +217,35 @@
                 </div>
 
                 <div class="game-grid">
-                    <div class="game-card hl-sound">
+                    <div class="game-card nav-element">
                         <img src="https://raw.githubusercontent.com/SolarisTM/TheOGServers/refs/heads/main/images/banners/Battlefield%202.png">
                         <div class="game-title">Battlefield 2</div>
                     </div>
-                    <div class="game-card hl-sound">
+                    <div class="game-card nav-element">
                         <img src="https://raw.githubusercontent.com/SolarisTM/TheOGServers/refs/heads/main/images/banners/Call%20of%20Duty%20Modern%20Warfare.png">
                         <div class="game-title">Call of Duty 4</div>
                     </div>
-                    <div class="game-card hl-sound">
+                    <div class="game-card nav-element">
                         <img src="https://raw.githubusercontent.com/SolarisTM/TheOGServers/refs/heads/main/images/banners/Counter-Strike%20Source.png">
                         <div class="game-title">Counter-Strike: Source</div>
                     </div>
-                    <div class="game-card hl-sound">
+                    <div class="game-card nav-element">
                         <img src="https://raw.githubusercontent.com/SolarisTM/TheOGServers/refs/heads/main/images/banners/Garry's%20Mod.png">
                         <div class="game-title">Garry's Mod</div>
                     </div>
-                    <div class="game-card hl-sound">
+                    <div class="game-card nav-element">
                         <img src="https://raw.githubusercontent.com/SolarisTM/TheOGServers/refs/heads/main/images/banners/Half-Life.png">
                         <div class="game-title">Half-Life 1</div>
                     </div>
-                    <div class="game-card hl-sound">
+                    <div class="game-card nav-element">
                         <img src="https://raw.githubusercontent.com/SolarisTM/TheOGServers/refs/heads/main/images/banners/Half-Life%202.png">
                         <div class="game-title">Half-Life 2</div>
                     </div>
-                    <div class="game-card hl-sound">
+                    <div class="game-card nav-element">
                         <img src="https://raw.githubusercontent.com/SolarisTM/TheOGServers/refs/heads/main/images/banners/Half-Life%202%20Deathmatch.png">
                         <div class="game-title">Half-Life 2: DM</div>
                     </div>
-                    <div class="game-card hl-sound">
+                    <div class="game-card nav-element">
                         <img src="https://raw.githubusercontent.com/SolarisTM/TheOGServers/refs/heads/main/images/banners/SWAT%204.png">
                         <div class="game-title">SWAT 4</div>
                     </div>
@@ -261,19 +259,36 @@
     </div>
 
     <footer class="taskbar">
-        <button class="start-btn">Start</button>
+        <button class="start-btn nav-element">Start</button>
         <div style="margin-left: 10px; color: white; font-size: 11px;">theogservers.com</div>
         <div style="margin-left: auto; color: white; font-size: 11px;" id="clock"></div>
     </footer>
 
     <script>
-        const hlClick = new Audio('https://www.soundboard.com/handler/DownLoadTrack.ashx?cliptitle=Half-Life+Select+Sound&filename=mt/MTY4NTI2NDMxNjg1Mjcy_p_2fGz_2biW9_2fM.mp3');
-        document.querySelectorAll('.hl-sound').forEach(el => {
+        // Configuração dos Áudios
+        const clickSound = new Audio('https://raw.githubusercontent.com/SolarisTM/TheOGServers/refs/heads/main/sounds/windows-xp/Windows%20Navigation%20Start.mp3');
+        const hoverSound = new Audio('https://raw.githubusercontent.com/SolarisTM/TheOGServers/refs/heads/main/sounds/windows-xp/Windows%20XP%20Ding.mp3');
+
+        // Seleciona todos os elementos interativos
+        const interactiveElements = document.querySelectorAll('.nav-element, button, .game-card');
+
+        interactiveElements.forEach(el => {
+            // Som ao passar o mouse
             el.addEventListener('mouseenter', () => {
-                hlClick.currentTime = 0;
-                hlClick.play().catch(() => {}); 
+                hoverSound.currentTime = 0;
+                hoverSound.play().catch(e => console.log("Interação do usuário necessária para áudio"));
+            });
+
+            // Som ao clicar com botão esquerdo
+            el.addEventListener('mousedown', (e) => {
+                if (e.button === 0) { // 0 é o botão esquerdo
+                    clickSound.currentTime = 0;
+                    clickSound.play().catch(e => console.log("Erro ao tocar som de clique"));
+                }
             });
         });
+
+        // Atualização do Relógio
         setInterval(() => {
             const now = new Date();
             document.getElementById('clock').innerText = now.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
