@@ -46,14 +46,13 @@
             background-color: #191919 !important;
         }
 
-        /* --- BARRA DE NAVEGAÇÃO (ESTRUTURA FIXA DA INDEX) --- */
         .action-buttons {
             display: flex;
             gap: 12px;
-            padding: 25px 20px 15px 20px; /* Padding idêntico ao da Index */
+            padding: 25px 20px 15px 20px;
             background: #191919;
             justify-content: center;
-            border-bottom: 1px solid #252525; /* A linha separadora crucial */
+            border-bottom: 1px solid #252525;
         }
 
         .nav-link {
@@ -78,7 +77,6 @@
             height: 24px;
         }
 
-        /* --- STEAM STYLE HEADER (Agora com margem para respeitar a linha) --- */
         .game-hero-header {
             width: 100%;
             height: 350px;
@@ -90,7 +88,6 @@
             padding: 40px 60px;
             box-sizing: border-box;
             border-bottom: 2px solid #333;
-            /* Removemos qualquer margem negativa para não "atropelar" a linha do menu */
         }
 
         .game-logo-area h1 {
@@ -103,7 +100,6 @@
             font-family: "Impact", sans-serif;
         }
 
-        /* --- CONTEÚDO CENTRALIZADO --- */
         .content-wrapper {
             display: flex;
             justify-content: center;
@@ -133,7 +129,6 @@
             margin-bottom: 20px;
         }
 
-        /* --- RODAPÉ --- */
         .site-footer {
             padding: 15px;
             text-align: center;
@@ -143,7 +138,6 @@
             border-top: 1px solid #252525;
         }
 
-        /* --- TASKBAR --- */
         .taskbar {
             position: fixed; bottom: 0; left: 0; right: 0;
             height: 30px;
@@ -177,21 +171,21 @@
             <div class="title-bar-controls">
                 <button aria-label="Minimize"></button>
                 <button aria-label="Maximize"></button>
-                <button aria-label="Close" onclick="window.location.href='index.html'"></button>
+                <button aria-label="Close" onclick="window.location.href='../index.html'"></button>
             </div>
         </div>
         
         <div class="window-body">
             
             <div class="action-buttons">
-                <a href="index.html" class="nav-link">
+                <a href="../index.html" class="nav-link">
                     <button class="nav-element">
                         <img src="https://raw.githubusercontent.com/SolarisTM/TheOGServers/refs/heads/main/images/icons/IE%20Home.png" alt="Home">
                         Home
                     </button>
                 </a>
 
-                <a href="index.html#game-section" class="nav-link">
+                <a href="../index.html#games" class="nav-link">
                     <button class="nav-element">
                         <img src="https://raw.githubusercontent.com/SolarisTM/TheOGServers/refs/heads/main/images/icons/Game%20Controller.png" alt="Games">
                         Games
@@ -226,7 +220,7 @@
                         
                         <p>O jogo apresenta o motor de jogo de última geração (para a época), com um novo sistema de física e iluminação dinâmica para tornar o campo de batalha mais realista.</p>
                         
-                        <p>Aqui no The OG Servers, focamos em preservar a experiência pura do BF2, garantindo que as mecânicas de Commander e a cooperação entre esquadrões continuem sendo o coração de cada partida.</p>
+                        <p>Aqui no The OG Servers, focamos em preservar a experiênia pura do BF2, garantindo que as mecânicas de Commander e a cooperação entre esquadrões continuem sendo o coração de cada partida.</p>
                     </div>
                 </div>
             </div>
@@ -238,7 +232,7 @@
     </div>
 
     <footer class="taskbar">
-        <button class="start-btn nav-element" onclick="window.location.href='index.html'">Start</button>
+        <button class="start-btn nav-element" onclick="window.location.href='../index.html'">Start</button>
         <div style="margin-left: 10px; color: white; font-size: 11px;">theogservers.com</div>
         <div style="margin-left: auto; color: white; font-size: 11px;" id="clock"></div>
     </footer>
