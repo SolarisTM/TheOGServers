@@ -52,7 +52,7 @@
             flex-direction: column;
         }
 
-        /* --- NAVIGATION MENU (Sincronizado com Index) --- */
+        /* --- NAVIGATION MENU (IGUAL AO INDEX) --- */
         .action-buttons {
             display: flex;
             gap: 12px;
@@ -219,6 +219,7 @@
             color: #eee;
         }
 
+        /* --- LINKS --- */
         .server-link {
             display: flex;
             align-items: center;
@@ -231,6 +232,10 @@
             background: #252525;
             border: 1px solid #333;
             transition: all 0.2s;
+        }
+
+        .mod-link {
+            color: #b42020 !important;
         }
 
         .server-link:hover {
@@ -295,7 +300,7 @@
             box-shadow: inset 1px 1px 1px #fff;
         }
 
-        /* --- ADAPTAÇÕES MOBILE (IGUAL AO INDEX) --- */
+        /* --- ADAPTAÇÕES MOBILE (SINCRO COM INDEX) --- */
         @media (max-width: 768px) {
             body { padding: 5px; padding-bottom: 40px; }
             .main-window { margin-top: 0; }
@@ -447,6 +452,20 @@
                             <a href="#" class="server-link nav-element">
                                 <img src="https://raw.githubusercontent.com/SolarisTM/TheOGServers/refs/heads/main/images/icons/games/Battlefield%202.png" class="server-icon" alt="BF2">
                                 OG Battlefield 2 [EU West]
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-window">
+                        <div class="sidebar-header">Featured Mods</div>
+                        <div class="sidebar-body">
+                            <a href="#" class="server-link mod-link nav-element">
+                                <img src="https://raw.githubusercontent.com/SolarisTM/TheOGServers/refs/heads/main/images/icons/Network%20Setup%20Wizard.png" class="server-icon" alt="Mod">
+                                Project Reality
+                            </a>
+                            <a href="#" class="server-link mod-link nav-element">
+                                <img src="https://raw.githubusercontent.com/SolarisTM/TheOGServers/refs/heads/main/images/icons/Network%20Setup%20Wizard.png" class="server-icon" alt="Mod">
+                                Forgotten Hope 2
                             </a>
                         </div>
                     </div>
