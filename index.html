@@ -206,8 +206,11 @@
         }
 
         @media (max-width: 480px) {
+            .action-buttons .nav-link, .action-buttons button { 
+                min-width: calc(50% - 8px); 
+                flex-grow: 1;
+            }
             .game-grid { grid-template-columns: 1fr; }
-            .action-buttons .nav-link, .action-buttons button { min-width: 100%; }
             .gif-container { gap: 10px; }
         }
     </style>
@@ -249,9 +252,13 @@
                         <img src="https://raw.githubusercontent.com/SolarisTM/TheOGServers/refs/heads/main/images/icons/Network%20Connections.png" alt="Status">
                         Status
                     </button>
-                    <button class="nav-element" style="background: #ffbd69; font-weight: bold; color: #000;">
+                    <button class="nav-element">
                         <img src="https://raw.githubusercontent.com/SolarisTM/TheOGServers/refs/heads/main/images/icons/Windows%20Messenger.png" alt="Community">
                         Community
+                    </button>
+                    <button class="nav-element" style="background: #ffbd69; font-weight: bold; color: #000;">
+                        <img src="https://raw.githubusercontent.com/SolarisTM/TheOGServers/refs/heads/main/images/icons/Remote%20Assistance.png" alt="Donations">
+                        Donations
                     </button>
                 </div>
 
