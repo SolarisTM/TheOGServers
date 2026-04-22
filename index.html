@@ -27,7 +27,6 @@
         }
 
         .main-window {
-            /* Aumentado de 1600px para 1800px para um visual mais largo */
             width: 1800px; 
             max-width: 98%;
             margin-top: 5px;
@@ -122,7 +121,6 @@
 
         .game-grid {
             display: grid;
-            /* Mantendo 4 colunas, que agora ficarão mais espaçosas com a janela maior */
             grid-template-columns: repeat(4, 1fr);
             gap: 25px;
             padding: 30px 60px;
@@ -138,6 +136,7 @@
             display: flex;
             flex-direction: column;
             background: #000;
+            text-decoration: none; /* Garante que não apareça sublinhado de link */
         }
 
         .game-card:hover {
@@ -267,10 +266,11 @@
                 </div>
 
                 <div class="game-grid" id="game-section">
-                    <div class="game-card nav-element">
+                    <a href="games/battlefield2.html" class="game-card nav-element">
                         <img src="https://raw.githubusercontent.com/SolarisTM/TheOGServers/refs/heads/main/images/banners/Battlefield%202.png">
                         <div class="game-title">Battlefield 2</div>
-                    </div>
+                    </a>
+
                     <div class="game-card nav-element">
                         <img src="https://raw.githubusercontent.com/SolarisTM/TheOGServers/refs/heads/main/images/banners/Call%20of%20Duty%20Modern%20Warfare%20(2007).png">
                         <div class="game-title">Call of Duty: Modern Warfare (2007)</div>
