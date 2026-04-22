@@ -46,14 +46,14 @@
             background-color: #191919 !important;
         }
 
-        /* --- BARRA DE NAVEGAÇÃO (IDÊNTICA À INDEX) --- */
+        /* --- BARRA DE NAVEGAÇÃO (ESTRUTURA FIXA DA INDEX) --- */
         .action-buttons {
             display: flex;
             gap: 12px;
-            padding: 25px 20px 15px 20px;
+            padding: 25px 20px 15px 20px; /* Padding idêntico ao da Index */
             background: #191919;
             justify-content: center;
-            border-bottom: 1px solid #252525;
+            border-bottom: 1px solid #252525; /* A linha separadora crucial */
         }
 
         .nav-link {
@@ -78,7 +78,7 @@
             height: 24px;
         }
 
-        /* --- STEAM STYLE HEADER --- */
+        /* --- STEAM STYLE HEADER (Agora com margem para respeitar a linha) --- */
         .game-hero-header {
             width: 100%;
             height: 350px;
@@ -90,6 +90,7 @@
             padding: 40px 60px;
             box-sizing: border-box;
             border-bottom: 2px solid #333;
+            /* Removemos qualquer margem negativa para não "atropelar" a linha do menu */
         }
 
         .game-logo-area h1 {
@@ -132,7 +133,7 @@
             margin-bottom: 20px;
         }
 
-        /* --- RODAPÉ (RESTAURADO PARA FICAR IGUAL À INDEX) --- */
+        /* --- RODAPÉ --- */
         .site-footer {
             padding: 15px;
             text-align: center;
@@ -223,7 +224,7 @@
                         <h3>Sobre o Jogo</h3>
                         <p>Battlefield 2 transporta a intensidade e o caos de Battlefield 1942 para a era moderna, apresentando novas armas e veículos, além de um dos sistemas de esquadrão mais influentes da história dos jogos de tiro em primeira pessoa.</p>
                         
-                        <p>O jogo apresenta o motor de jogo de última geração (para a época), com um novo sistema de física e iluminação dinâmica para tornar o campo de batalha mais realista. Os jogadores podem escolher lutar por uma das três superpotências militares: os Estados Unidos, a China ou a recém-formada Coalizão do Oriente Médio.</p>
+                        <p>O jogo apresenta o motor de jogo de última geração (para a época), com um novo sistema de física e iluminação dinâmica para tornar o campo de batalha mais realista.</p>
                         
                         <p>Aqui no The OG Servers, focamos em preservar a experiência pura do BF2, garantindo que as mecânicas de Commander e a cooperação entre esquadrões continuem sendo o coração de cada partida.</p>
                     </div>
