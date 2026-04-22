@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battlefield 2 - The OG Servers</title>
+    
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/SolarisTM/TheOGServers/refs/heads/main/images/banners/Battlefield%202.png">
+
+    <link rel="stylesheet" href="https://unpkg.com/xp.css">
+    <style>
+        /* --- ESTILO DESKTOP --- */
+        html { scroll-behavior: smooth; }
+
+        body {
+            background: #0078D7 url('https://raw.githubusercontent.com/SolarisTM/TheOGServers/refs/heads/main/images/bliss-windows-xp.jpg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0; padding: 20px;
+            font-family: "Tahoma", sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+        }
+
+        .main-window {
+            width: 1800px; 
+            max-width: 98%;
+            margin-top: 5px;
+        }
+
+        .title-bar-text::before {
+            content: "";
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            vertical-align: middle;
+            margin-right: 6px;
+            background: url('https://raw.githubusercontent.com/SolarisTM/TheOGServers/refs/heads/main/images/banners/Battlefield%202.png') no-repeat center center;
+            background-size: contain;
+        }
+
+        .window-body {
+            margin: 0 !important;
+            padding: 0 !important;
+            background-color: #191919 !important;
+        }
+
+        /* --- BARRA DE NAVEGAÇÃO (IDÊNTICA À INDEX) --- */
+        .action-buttons {
+            display: flex;
+            gap: 12px;
+            padding: 25px 20px 15px 20px;
+            background: #191919;
+            justify-content: center;
+            border-bottom: 1px solid #252525;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .action-buttons button {
+            min-width: 150px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-weight: bold;
+            font-size: 12px;
+            cursor: pointer;
+        }
+
+        .action-buttons button img {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* --- STEAM STYLE HEADER --- */
+        .game-hero-header {
+            width: 100%;
+            height: 350px;
+            background: linear-gradient(to top, rgba(25,25,25,1) 0%, rgba(25,25,25,0.4) 50%, rgba(0,0,0,0) 100%), 
+                        url('https://raw.githubusercontent.com/SolarisTM/TheOGServers/refs/heads/main/images/banners/Battlefield%202.png') no-repeat center 20%;
+            background-size: cover;
+            display: flex;
+            align-items: flex-end;
+            padding: 40px 60px;
+            box-sizing: border-box;
+            border-bottom: 2px solid #333;
+        }
+
+        .game-logo-area h1 {
+            color: white;
+            font-size: 56px;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 3px 3px 15px rgba(0,0,0,0.9);
+            font-family: "Impact", sans-serif;
+        }
+
+        /* --- CONTEÚDO CENTRALIZADO --- */
+        .content-wrapper {
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
+            background-color: #191919;
+        }
+
+        .main-content {
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        .info-block {
+            background: #202020;
+            padding: 30px;
+            border: 1px solid #333;
+            color: #ddd;
+            line-height: 1.6;
+        }
+
+        .info-block h3 {
+            color: #ffbd69;
+            margin-top: 0;
+            font-size: 22px;
+            border-bottom: 1px solid #444;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* --- RODAPÉ (RESTAURADO PARA FICAR IGUAL À INDEX) --- */
+        .site-footer {
+            padding: 15px;
+            text-align: center;
+            color: #666;
+            font-size: 11px;
+            background: #191919;
+            border-top: 1px solid #252525;
+        }
+
+        /* --- TASKBAR --- */
+        .taskbar {
+            position: fixed; bottom: 0; left: 0; right: 0;
+            height: 30px;
+            background: linear-gradient(to bottom, #245edb 0%, #3f8cf3 9%, #245edb 18%, #245edb 92%, #191919 100%);
+            border-top: 1px solid #0831d9;
+            display: flex; align-items: center; padding: 0 10px;
+            z-index: 1000;
+        }
+
+        .start-btn {
+            background: linear-gradient(to bottom, #388e3c 0%, #4caf50 50%, #388e3c 100%);
+            color: white; font-weight: bold; font-style: italic;
+            border: none; padding: 2px 15px; border-radius: 0 10px 10px 0;
+            cursor: pointer;
+            box-shadow: inset 1px 1px 1px #fff;
+        }
+
+        @media (max-width: 768px) {
+            .action-buttons { flex-wrap: wrap; gap: 8px; padding: 15px 10px; }
+            .action-buttons .nav-link, .action-buttons button { min-width: calc(50% - 10px); flex-grow: 1; }
+            .game-hero-header { height: 200px; padding: 20px; }
+            .game-logo-area h1 { font-size: 32px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="window main-window">
+        <div class="title-bar">
+            <div class="title-bar-text">Battlefield 2</div>
+            <div class="title-bar-controls">
+                <button aria-label="Minimize"></button>
+                <button aria-label="Maximize"></button>
+                <button aria-label="Close" onclick="window.location.href='index.html'"></button>
+            </div>
+        </div>
+        
+        <div class="window-body">
+            
+            <div class="action-buttons">
+                <a href="index.html" class="nav-link">
+                    <button class="nav-element">
+                        <img src="https://raw.githubusercontent.com/SolarisTM/TheOGServers/refs/heads/main/images/icons/IE%20Home.png" alt="Home">
+                        Home
+                    </button>
+                </a>
+
+                <a href="index.html#game-section" class="nav-link">
+                    <button class="nav-element">
+                        <img src="https://raw.githubusercontent.com/SolarisTM/TheOGServers/refs/heads/main/images/icons/Game%20Controller.png" alt="Games">
+                        Games
+                    </button>
+                </a>
+
+                <button class="nav-element">
+                    <img src="https://raw.githubusercontent.com/SolarisTM/TheOGServers/refs/heads/main/images/icons/Manage%20Your%20Server.png" alt="Servers">
+                    Servers
+                </button>
+                <button class="nav-element">
+                    <img src="https://raw.githubusercontent.com/SolarisTM/TheOGServers/refs/heads/main/images/icons/Network%20Connections.png" alt="Status">
+                    Status
+                </button>
+                <button class="nav-element" style="background: #ffbd69; font-weight: bold; color: #000;">
+                    <img src="https://raw.githubusercontent.com/SolarisTM/TheOGServers/refs/heads/main/images/icons/Windows%20Messenger.png" alt="Community">
+                    Community
+                </button>
+            </div>
+
+            <div class="game-hero-header">
+                <div class="game-logo-area">
+                    <h1>Battlefield 2</h1>
+                </div>
+            </div>
+
+            <div class="content-wrapper">
+                <div class="main-content">
+                    <div class="info-block">
+                        <h3>Sobre o Jogo</h3>
+                        <p>Battlefield 2 transporta a intensidade e o caos de Battlefield 1942 para a era moderna, apresentando novas armas e veículos, além de um dos sistemas de esquadrão mais influentes da história dos jogos de tiro em primeira pessoa.</p>
+                        
+                        <p>O jogo apresenta o motor de jogo de última geração (para a época), com um novo sistema de física e iluminação dinâmica para tornar o campo de batalha mais realista. Os jogadores podem escolher lutar por uma das três superpotências militares: os Estados Unidos, a China ou a recém-formada Coalizão do Oriente Médio.</p>
+                        
+                        <p>Aqui no The OG Servers, focamos em preservar a experiência pura do BF2, garantindo que as mecânicas de Commander e a cooperação entre esquadrões continuem sendo o coração de cada partida.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="site-footer">
+                © 2026 The OG Servers. All Rights Reserved.
+            </div>
+        </div>
+    </div>
+
+    <footer class="taskbar">
+        <button class="start-btn nav-element" onclick="window.location.href='index.html'">Start</button>
+        <div style="margin-left: 10px; color: white; font-size: 11px;">theogservers.com</div>
+        <div style="margin-left: auto; color: white; font-size: 11px;" id="clock"></div>
+    </footer>
+
+    <script>
+        const clickSound = new Audio('https://raw.githubusercontent.com/SolarisTM/TheOGServers/refs/heads/main/sounds/windows-xp/Windows%20Navigation%20Start.mp3');
+        const hoverSound = new Audio('https://raw.githubusercontent.com/SolarisTM/TheOGServers/refs/heads/main/sounds/windows-xp/Windows%20XP%20Balloon.mp3');
+
+        const interactiveElements = document.querySelectorAll('.nav-element, button');
+
+        interactiveElements.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                hoverSound.currentTime = 0;
+                hoverSound.play().catch(e => {});
+            });
+
+            el.addEventListener('mousedown', (e) => {
+                if (e.button === 0) {
+                    clickSound.currentTime = 0;
+                    clickSound.play().catch(e => {});
+                }
+            });
+        });
+
+        setInterval(() => {
+            const now = new Date();
+            document.getElementById('clock').innerText = now.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+        }, 1000);
+    </script>
+</body>
+</html>
