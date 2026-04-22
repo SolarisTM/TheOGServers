@@ -9,7 +9,7 @@
 
     <link rel="stylesheet" href="https://unpkg.com/xp.css">
     <style>
-        /* --- DESKTOP STYLE --- */
+        /* --- CORE STYLE --- */
         html { scroll-behavior: smooth; }
 
         body {
@@ -46,6 +46,7 @@
             background-color: #191919 !important;
         }
 
+        /* --- NAVIGATION MENU (INTACT) --- */
         .action-buttons {
             display: flex;
             gap: 12px;
@@ -77,56 +78,124 @@
             height: 24px;
         }
 
-        .game-hero-header {
+        /* --- GAME CONTENT AREA --- */
+        
+        .game-hero-container {
+            position: relative;
             width: 100%;
-            height: 350px;
-            background: linear-gradient(to top, rgba(25,25,25,1) 0%, rgba(25,25,25,0.4) 50%, rgba(0,0,0,0) 100%), 
-                        url('https://raw.githubusercontent.com/SolarisTM/TheOGServers/refs/heads/main/images/banners/Battlefield%202.png') no-repeat center 20%;
+            height: 400px;
+            background: url('https://raw.githubusercontent.com/SolarisTM/TheOGServers/refs/heads/main/images/headers/Battlefield%202.png') no-repeat center center;
             background-size: cover;
-            display: flex;
-            align-items: flex-end;
-            padding: 40px 60px;
-            box-sizing: border-box;
             border-bottom: 2px solid #333;
         }
 
-        .game-logo-area h1 {
-            color: white;
-            font-size: 56px;
-            margin: 0;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            text-shadow: 3px 3px 15px rgba(0,0,0,0.9);
-            font-family: "Impact", sans-serif;
+        .game-logo-img {
+            position: absolute;
+            top: 40px;
+            left: 60px;
+            max-width: 450px;
+            height: auto;
+            filter: drop-shadow(3px 3px 15px rgba(0,0,0,0.9));
         }
 
+        /* AVAILABILITY BAR */
+        .availability-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            padding: 0 60px;
+            box-sizing: border-box;
+            gap: 30px;
+        }
+
+        .availability-title {
+            color: #888;
+            font-weight: bold;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .platform-list {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .platform-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            transition: opacity 0.2s;
+        }
+
+        .platform-item:hover {
+            opacity: 0.7;
+        }
+
+        .platform-icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* 2. Metadata Bar */
+        .metadata-bar {
+            background-color: #111;
+            padding: 15px 60px;
+            border-bottom: 1px solid #222;
+            font-size: 12px;
+            color: #888;
+        }
+        .metadata-label { color: #aaa; font-weight: bold; margin-right: 5px; }
+
+        /* 3. Media & Description Layout */
         .content-wrapper {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            align-items: center;
             padding: 40px 20px;
             background-color: #191919;
         }
 
-        .main-content {
+        .media-container {
             width: 100%;
-            max-width: 1000px;
+            max-width: 900px;
+            margin-bottom: 30px;
         }
 
-        .info-block {
+        .video-wrapper {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: black;
+            border: 1px solid #333;
+            overflow: hidden;
+        }
+
+        .video-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .description-box {
+            width: 100%;
+            max-width: 900px;
+            color: #ccc;
+            line-height: 1.7;
+            font-size: 14px;
             background: #202020;
             padding: 30px;
             border: 1px solid #333;
-            color: #ddd;
-            line-height: 1.6;
-        }
-
-        .info-block h3 {
-            color: #ffbd69;
-            margin-top: 0;
-            font-size: 22px;
-            border-bottom: 1px solid #444;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
+            box-sizing: border-box;
         }
 
         .site-footer {
@@ -156,10 +225,10 @@
         }
 
         @media (max-width: 768px) {
-            .action-buttons { flex-wrap: wrap; gap: 8px; padding: 15px 10px; }
-            .action-buttons .nav-link, .action-buttons button { min-width: calc(50% - 10px); flex-grow: 1; }
-            .game-hero-header { height: 200px; padding: 20px; }
-            .game-logo-area h1 { font-size: 32px; }
+            .action-buttons { flex-wrap: wrap; }
+            .action-buttons button { min-width: calc(50% - 10px); }
+            .game-logo-img { max-width: 250px; left: 20px; top: 30px; }
+            .availability-bar { padding: 0 20px; gap: 15px; }
         }
     </style>
 </head>
@@ -206,22 +275,35 @@
                 </button>
             </div>
 
-            <div class="game-hero-header">
-                <div class="game-logo-area">
-                    <h1>Battlefield 2</h1>
+            <div class="game-hero-container">
+                <img src="https://raw.githubusercontent.com/SolarisTM/TheOGServers/refs/heads/main/images/logos/Battlefield%202.png" alt="Battlefield 2 Logo" class="game-logo-img">
+                
+                <div class="availability-bar">
+                    <span class="availability-title">Availability</span>
+                    <div class="platform-list">
+                        <a href="https://store.steampowered.com/" target="_blank" class="platform-item">
+                            <img src="https://raw.githubusercontent.com/SolarisTM/TheOGServers/refs/heads/main/images/icons/steam_icon.png" onerror="this.src='https://www.google.com/s2/favicons?domain=steampowered.com&sz=32'" class="platform-icon" alt="Steam">
+                            Steam
+                        </a>
+                    </div>
                 </div>
             </div>
 
+            <div class="metadata-bar">
+                <span class="metadata-label">Released on</span> Jun 21, 2005 | 
+                <span class="metadata-label">Published by</span> Electronic Arts
+            </div>
+
             <div class="content-wrapper">
-                <div class="main-content">
-                    <div class="info-block">
-                        <h3>About the Game</h3>
-                        <p>Battlefield 2 brings the intensity and chaos of Battlefield 1942 into the modern era, featuring new weapons and vehicles, along with one of the most influential squad systems in the history of first-person shooters.</p>
-                        
-                        <p>The game features a next-generation engine (for its time), with a new physics system and dynamic lighting to make the battlefield more realistic.</p>
-                        
-                        <p>Here at The OG Servers, we focus on preserving the pure BF2 experience, ensuring that Commander mechanics and squad cooperation remain the heart of every match.</p>
+                <div class="media-container">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/h8W5TGUVK1A" allowfullscreen></iframe>
                     </div>
+                </div>
+
+                <div class="description-box">
+                    <p>Battlefield 2 is a modern warfare first-person shooter that revolutionized tactical squad-based combat. Featuring a wide range of vehicles and specialized kits, it remains a gold standard for teamplay.</p>
+                    <p>Our servers provide the original 2005 experience, including full Commander support and squad leadership mechanics that are often missing in modern titles.</p>
                 </div>
             </div>
 
@@ -241,7 +323,7 @@
         const clickSound = new Audio('https://raw.githubusercontent.com/SolarisTM/TheOGServers/refs/heads/main/sounds/windows-xp/Windows%20Navigation%20Start.mp3');
         const hoverSound = new Audio('https://raw.githubusercontent.com/SolarisTM/TheOGServers/refs/heads/main/sounds/windows-xp/Windows%20XP%20Balloon.mp3');
 
-        const interactiveElements = document.querySelectorAll('.nav-element, button');
+        const interactiveElements = document.querySelectorAll('.nav-element, button, .platform-item');
 
         interactiveElements.forEach(el => {
             el.addEventListener('mouseenter', () => {
