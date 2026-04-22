@@ -52,7 +52,7 @@
             flex-direction: column;
         }
 
-        /* --- NAVIGATION MENU (IGUAL AO INDEX) --- */
+        /* --- NAVIGATION MENU --- */
         .action-buttons {
             display: flex;
             gap: 12px;
@@ -156,7 +156,7 @@
 
         .metadata-label { color: #aaa; font-weight: bold; margin-right: 5px; }
 
-        /* --- CONTENT AREA & SIDEBAR --- */
+        /* --- CONTENT AREA --- */
         .content-wrapper {
             display: flex;
             flex-direction: row;
@@ -175,6 +175,43 @@
             gap: 30px;
         }
 
+        .video-wrapper {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: black;
+            border: 1px solid #333;
+            overflow: hidden;
+        }
+
+        .video-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .description-box {
+            color: #ccc;
+            line-height: 1.6;
+            font-size: 13px; /* Fonte reduzida aqui */
+            background: #202020;
+            padding: 25px;
+            border: 1px solid #333;
+            box-sizing: border-box;
+        }
+
+        .description-title {
+            display: block;
+            font-size: 18px; /* Título reduzido aqui */
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 12px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* --- SIDEBAR --- */
         .sidebar {
             width: 350px;
             display: flex;
@@ -219,7 +256,6 @@
             color: #eee;
         }
 
-        /* --- LINKS --- */
         .server-link {
             display: flex;
             align-items: center;
@@ -247,30 +283,6 @@
         .server-icon {
             width: 20px;
             height: 20px;
-        }
-
-        .video-wrapper {
-            width: 100%;
-            aspect-ratio: 16 / 9;
-            background: black;
-            border: 1px solid #333;
-            overflow: hidden;
-        }
-
-        .video-wrapper iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        .description-box {
-            color: #ccc;
-            line-height: 1.7;
-            font-size: 14px;
-            background: #202020;
-            padding: 30px;
-            border: 1px solid #333;
-            box-sizing: border-box;
         }
 
         .site-footer {
@@ -410,6 +422,7 @@
                         <iframe src="https://www.youtube.com/embed/h8W5TGUVK1A" allowfullscreen></iframe>
                     </div>
                     <div class="description-box">
+                        <span class="description-title">Description</span>
                         <p>Battlefield 2 is a single-player and multiplayer first-person shooter set in a near-future global conflict. The game depicts a hypothetical war in which the United States, China, and the Middle Eastern Coalition (MEC) fight for dominance across a variety of large-scale battlefields. Players take the role of infantry soldiers or vehicle operators and can also rise through the ranks to act as squad leaders or overall commander, directing the flow of combat across the map.</p>
                         <p>Multiplayer battles are designed for up to 64 players and are fought over large maps divided into control points. Capturing and holding flags reduces the opposing team’s “tickets,” a shared pool of reinforcements. Victory is achieved by draining the enemy’s tickets to zero. Players can join squads that function as small tactical units, with squad leaders able to request supplies, reinforcements, or transportation. The commander role provides a strategic layer, granting access to satellite scans, UAV surveillance, supply drops, and artillery strikes, all of which can turn the tide of battle.</p>
                     </div>
