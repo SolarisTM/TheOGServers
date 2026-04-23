@@ -302,10 +302,23 @@
             text-align: center;
             cursor: pointer;
             transition: background 0.2s;
+            position: relative;
         }
 
         .console-copy-box:hover {
             background: #111;
+        }
+
+        #copy-status {
+            display: block;
+            font-size: 10px;
+            color: #00ff00;
+            text-align: center;
+            margin-top: 5px;
+            font-family: 'Tahoma', sans-serif;
+            height: 12px;
+            opacity: 0;
+            transition: opacity 0.3s;
         }
 
         .server-icon {
@@ -477,6 +490,7 @@
                             <div class="console-copy-box" onclick="copyConsoleIP()" title="Click to copy">
                                 47.233.98.90:16567
                             </div>
+                            <span id="copy-status">IP Copied to Clipboard!</span>
                         </div>
                     </div>
 
@@ -537,8 +551,14 @@
 
         function copyConsoleIP() {
             const ip = "47.233.98.90:16567";
+            const status = document.getElementById('copy-status');
+            
             navigator.clipboard.writeText(ip).then(() => {
-                alert("IP Copied: " + ip);
+                status.style.opacity = "1"; // Mostra a mensagem
+                
+                setTimeout(() => {
+                    status.style.opacity = "0"; // Esconde após 3 segundos
+                }, 3000);
             });
         }
 
