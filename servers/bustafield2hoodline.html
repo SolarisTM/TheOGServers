@@ -353,7 +353,7 @@
             box-shadow: inset 1px 1px 1px #fff;
         }
 
-        /* --- ADAPTAÇÕES MOBILE --- */
+        /* --- ADAPTAÇÕES MOBILE (IGUAL BATTLEFIELD 2) --- */
         @media (max-width: 768px) {
             body { padding: 5px; padding-bottom: 40px; }
             .main-window { margin-top: 0; }
@@ -392,6 +392,18 @@
             .sidebar { width: 100%; }
             .description-box { padding: 20px; }
             .taskbar { height: 35px; }
+        }
+
+        @media (max-width: 480px) {
+            .action-buttons .nav-link, .action-buttons > button { 
+                width: calc(50% - 6px); 
+                min-width: unset;
+                flex-grow: 0;
+            }
+            .action-buttons .nav-link button {
+                width: 100%;
+                min-width: 100%;
+            }
         }
     </style>
 </head>
