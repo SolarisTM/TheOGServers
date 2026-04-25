@@ -130,7 +130,8 @@
         .game-card {
             border: 1px solid #444;
             background: #000;
-            padding: 10px;
+            /* Ajuste solicitado: Aumentado o padding vertical de 10px para 18px */
+            padding: 18px 10px; 
             display: flex;
             flex-direction: row;
             align-items: center;
@@ -184,7 +185,7 @@
             border-top: 1px solid #252525;
         }
 
-        /* --- ADAPTAÇÕES PARA MOBILE (BASEADAS NO SERVERS.HTML) --- */
+        /* --- ADAPTAÇÕES PARA MOBILE --- */
         @media (max-width: 1200px) {
             .game-grid { grid-template-columns: repeat(2, 1fr); }
         }
@@ -194,12 +195,9 @@
             .main-window { margin-top: 0; margin-bottom: 0; }
             .action-buttons { flex-wrap: wrap; gap: 8px; padding: 15px 10px; }
             .action-buttons .nav-link, .action-buttons button { min-width: calc(50% - 10px); flex-grow: 1; }
-            
-            /* Ajuste conforme solicitado: Baseado no servers.html */
             .welcome-section { padding: 15px; margin: 10px; }
             .welcome-gif { max-width: 70%; }
             .arrow-gif { width: 30px; }
-            
             .game-grid { grid-template-columns: 1fr; padding: 15px; gap: 10px; }
         }
 
