@@ -1,8 +1,0 @@
-{
-  "name": "theogservers",
-  "compatibility_date": "2026-04-27",
-  "assets": {
-    "directory": ".",
-    "exclude": [".git", ".github"]
-  }
-}
