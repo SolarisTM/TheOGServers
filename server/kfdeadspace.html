@@ -479,11 +479,11 @@
                     <div class="sidebar-window">
                         <div class="sidebar-header">Connect</div>
                         <div class="sidebar-body">
-                            <button class="nav-element steam-btn" onclick="window.location.href='steam://connect/47.233.98.90:10480'">
+                            <button class="nav-element steam-btn" onclick="window.location.href='steam://connect/47.233.98.90:7709'">
                                 Join Server
                             </button>
                             <div class="console-copy-box" onclick="copyConsoleIP()" title="Click to copy">
-                                play.theogservers.com:10480
+                                play.theogservers.com:7709
                             </div>
                             <span id="copy-status">IP Copied to Clipboard!</span>
                         </div>
@@ -539,7 +539,7 @@
         function toggleMusic() { if (themeMusic.paused) { themeMusic.play(); } else { themeMusic.pause(); } }
 
         function copyConsoleIP() {
-            const ip = "play.theogservers.com:10480";
+            const ip = "play.theogservers.com:7709";
             const status = document.getElementById('copy-status');
             navigator.clipboard.writeText(ip).then(() => {
                 status.style.opacity = "1";
