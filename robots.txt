@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Disallow technical and script directories
+Disallow: /config/
+Disallow: /scripts/
+
+# Pointing to the official sitemap
+Sitemap: https://www.theogservers.com/sitemap.xml

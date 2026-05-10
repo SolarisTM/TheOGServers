@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Home Page -->
+  <url>
+    <loc>https://www.theogservers.com/index.html</loc>
+    <priority>1.0</priority>
+  </url>
+  <!-- Game List -->
+  <url>
+    <loc>https://www.theogservers.com/index.html#games</loc>
+    <priority>0.8</priority>
+  </url>
+  <!-- Server Listing -->
+  <url>
+    <loc>https://www.theogservers.com/servers.html</loc>
+    <priority>0.9</priority>
+  </url>
+  <!-- Community Page -->
+  <url>
+    <loc>https://www.theogservers.com/community.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <!-- Real-time Status -->
+  <url>
+    <loc>https://www.theogservers.com/status.html</loc>
+    <priority>0.7</priority>
+  </url>
+</urlset>
