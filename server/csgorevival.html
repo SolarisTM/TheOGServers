@@ -312,7 +312,7 @@
             background: #111;
         }
 
-        #copy-status {
+        #copy-status, #copy-status-reserve {
             display: block;
             font-size: 10px;
             color: #00ff00;
@@ -483,10 +483,16 @@
                             <button class="nav-element steam-btn" onclick="window.location.href='https://drive.google.com/file/d/1Sd29_YBSuNBnoGpbcRVOTN9j9Ee7vJFd/view?usp=sharing'">
                                 Join Server
                             </button>
+                            
                             <div class="console-copy-box" onclick="copyConsoleIP()" title="Click to copy">
                                 play.theogservers.com:27015
                             </div>
                             <span id="copy-status">IP Copied to Clipboard!</span>
+
+                            <div class="console-copy-box" onclick="copyReserveIP()" title="Click to copy" style="margin-top: 10px;">
+                                play.theogservers.com:27011
+                            </div>
+                            <span id="copy-status-reserve">IP Copied to Clipboard!</span>
                         </div>
                     </div>
 
@@ -553,6 +559,15 @@
         function copyConsoleIP() {
             const ip = "play.theogservers.com:27015";
             const status = document.getElementById('copy-status');
+            navigator.clipboard.writeText(ip).then(() => {
+                status.style.opacity = "1";
+                setTimeout(() => { status.style.opacity = "0"; }, 3000);
+            });
+        }
+
+        function copyReserveIP() {
+            const ip = "play.theogservers.com:27011";
+            const status = document.getElementById('copy-status-reserve');
             navigator.clipboard.writeText(ip).then(() => {
                 status.style.opacity = "1";
                 setTimeout(() => { status.style.opacity = "0"; }, 3000);
