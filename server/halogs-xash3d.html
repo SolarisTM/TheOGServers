@@ -458,7 +458,7 @@
             </div>
 
             <div class="metadata-bar">
-                <span class="metadata-label">Released on</span> Apr 13, 2004 | 
+                <span class="metadata-label">Released on</span> Jun 27, 2025 | 
                 <span class="metadata-label">Genre</span> Racing | 
                 <span class="metadata-label">Developed by</span> KornyBizkit | 
                 <span class="metadata-label">Published by</span> KornyBizkit
@@ -480,11 +480,11 @@
                     <div class="sidebar-window">
                         <div class="sidebar-header">Connect</div>
                         <div class="sidebar-body">
-                            <button class="nav-element steam-btn" onclick="window.location.href='steam://connect/47.233.98.90:27020'">
+                            <button class="nav-element steam-btn" onclick="window.location.href='steam://connect/47.233.98.90:27037'">
                                 Join Server
                             </button>
                             <div class="console-copy-box" onclick="copyConsoleIP()" title="Click to copy">
-                                play.theogservers.com:27020
+                                play.theogservers.com:27037
                             </div>
                             <span id="copy-status">IP Copied to Clipboard!</span>
                         </div>
@@ -499,15 +499,15 @@
                             </div>
                             <div class="detail-item">
                                 <span class="detail-label">Version:</span>
-                                <span>1.1</span>
+                                <span>1.0</span>
                             </div>
                             <div class="detail-item">
                                 <span class="detail-label">Mode:</span>
-                                <span>Racing Circuits</span>
+                                <span>DeathMatch</span>
                             </div>
                             <div class="detail-item">
                                 <span class="detail-label">Max. Players:</span>
-                                <span>16</span>
+                                <span>32</span>
                             </div>
                         </div>
                     </div>
@@ -540,7 +540,7 @@
         function toggleMusic() { if (themeMusic.paused) { themeMusic.play(); } else { themeMusic.pause(); } }
 
         function copyConsoleIP() {
-            const ip = "play.theogservers.com:27020";
+            const ip = "play.theogservers.com:27037";
             const status = document.getElementById('copy-status');
             navigator.clipboard.writeText(ip).then(() => {
                 status.style.opacity = "1";
