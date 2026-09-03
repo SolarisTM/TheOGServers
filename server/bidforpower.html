@@ -480,11 +480,11 @@
                     <div class="sidebar-window">
                         <div class="sidebar-header">Connect</div>
                         <div class="sidebar-body">
-                            <button class="nav-element steam-btn" onclick="window.location.href='steam://run/1250//+connect 47.233.98.90:27960'">
+                            <button class="nav-element steam-btn" onclick="window.location.href='steam://run/1250//+connect 47.233.98.90:27961'">
                                 Join Server
                             </button>
                             <div class="console-copy-box" onclick="copyConsoleIP()" title="Click to copy">
-                                play.theogservers.com:27960
+                                play.theogservers.com:27961
                             </div>
                             <span id="copy-status">IP Copied to Clipboard!</span>
                         </div>
@@ -499,11 +499,11 @@
                             </div>
                             <div class="detail-item">
                                 <span class="detail-label">Version:</span>
-                                <span>v68</span>
+                                <span>1.2</span>
                             </div>
                             <div class="detail-item">
                                 <span class="detail-label">Mode:</span>
-                                <span>FFA/TDM/CTF</span>
+                                <span>FFA/TDM</span>
                             </div>
                             <div class="detail-item">
                                 <span class="detail-label">Max. Players:</span>
@@ -540,7 +540,7 @@
         function toggleMusic() { if (themeMusic.paused) { themeMusic.play(); } else { themeMusic.pause(); } }
 
         function copyConsoleIP() {
-            const ip = "play.theogservers.com:27960";
+            const ip = "play.theogservers.com:27961";
             const status = document.getElementById('copy-status');
             navigator.clipboard.writeText(ip).then(() => {
                 status.style.opacity = "1";
